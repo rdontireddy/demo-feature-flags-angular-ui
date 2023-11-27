@@ -259,7 +259,7 @@
           </a>
         }
       </div>
-      <div class="social-links">
+      <div class="social-links" *ngIf=" showSocialLinks | async">
         <a
           href="https://github.com/angular/angular"
           aria-label="Github"
@@ -331,6 +331,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 <router-outlet></router-outlet>
