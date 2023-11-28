@@ -17,7 +17,10 @@ export class AppComponent implements OnInit {
   constructor(private readonly featureFlagService: FeatureFlagService) {
 
   }
-  ngOnInit(): void {
+  async ngOnInit() {
+    
+    await this.featureFlagService.UpdateContext({userId: '123', userName:'Raj Dontireddy'});
+
     this.showSocialLinks = this.featureFlagService.getFlag('social-media-links', false);
   }
   title = 'demo-feature-flags-angular-ui';
