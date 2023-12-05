@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   }
   async ngOnInit() {
     
-    await this.featureFlagService.UpdateContext({userId: '123', userName:'Raj Dontireddy'});
+    await this.featureFlagService.UpdateIdentityContext({userId: '123', userName:'Raj Dontireddy'});
 
     this.showSocialLinks = this.featureFlagService.getFlag('social-media-links', false);
   }

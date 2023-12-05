@@ -69,7 +69,7 @@ export class FeatureFlagService implements OnDestroy {
     return this.flagChange$;
   }
 
-  public async UpdateContext(context : IFeatureFlagContext) {
+  public async UpdateIdentityContext(context : IFeatureFlagContext) {
     const ldContext: LaunchDarkly.LDContext = {
         kind: 'user',
         key: context.userId,
