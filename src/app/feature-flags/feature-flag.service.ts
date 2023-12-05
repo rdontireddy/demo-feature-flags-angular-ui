@@ -3,7 +3,6 @@ import {
   Injectable,
   InjectionToken,
   OnDestroy,
-  inject,
 } from '@angular/core';
 import * as LaunchDarkly from 'launchdarkly-js-client-sdk';
 import { LDFlagSet, LDFlagValue } from 'launchdarkly-js-client-sdk';

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { Observable, map, tap } from 'rxjs';
-import { FeatureFlagService } from './feature-flags/feature-flag.service';
+import { Observable, map } from 'rxjs';
+import { FeatureFlagModule,FeatureFlagService } from './feature-flags';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FeatureFlagModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
@@ -17,11 +17,8 @@ export class AppComponent implements OnInit {
   constructor(private readonly featureFlagService: FeatureFlagService) {
 
   }
-  async ngOnInit() {
-    
-    await this.featureFlagService.UpdateIdentityContext({userId: '123', userName:'Raj Dontireddy'});
-
-    this.showSocialLinks = this.featureFlagService.getFlag('social-media-links', false);
+  async ngOnInit() {    
+    await this.featureFlagService.UpdateIdentityContext({userId: '123', userName:'Raj Dontireddy'});    
   }
   title = 'demo-feature-flags-angular-ui';
 }
